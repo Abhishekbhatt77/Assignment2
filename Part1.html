@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Calculate the Total with text</title>
+        <style>
+            input[type="text"] {
+              display: inline-block;
+              width: 70px;
+              margin-right: 10px;
+            }
+            
+            label {
+              display: inline-block;
+              width: 100px;
+            }
+</style>
+<script>
+    function calculateTotalWithTax() {
+      var room = 
+      Number(document.getElementById("room").value);
+      var food = 
+      Number(document.getElementById("food").value);
+      var entertainment = 
+      Number(document.getElementById("entertainment").value);
+      var total = room + food + entertainment;
+      var WithTax = total * 0.13 + total;
+      document.getElementById("total").value = 
+      total.toFixed(2)
+      document.getElementById("with-tax").value = 
+      WithTax.toFixed(2);
+}
+</script>
+</head>
+<body>
+    <h1>Calculate Total with Tax</h1>
+    <div class="input-container">
+<label>Room Rental:</label>
+<input type="text" id="room" oninput="calculateTotalWithTax()">
+<br>
+<br>
+<label>Food:</label>
+<input type="text" id="food" oninput="calculateTotalWithTax()">
+<br>
+<br>
+<label>Entertainment:</label>
+<input type="text" id="entertainment" oninput="calculateTotalWithTax()">
+<br>
+<br>
+<label>Total:</label>
+<input type="text" id="total" disabled>
+<br>
+<br>
+<label>Total with Tax:</label>
+<input type="text" id="with-tax" disabled>
+<br>
+<br>
+</div>
+</body>
+    </html>
